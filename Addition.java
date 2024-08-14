@@ -29,9 +29,9 @@ public class Addition
    */
    { // Esse abrir chave é para iniciar a ação/comando da: public class Addition
       String firstNumber = 
-         JOptionPane.showInputDialog("Enter first integer");
+         JOptionPane.showInputDialog("Digite o primeiro número!");
       String secondNumber =
-         JOptionPane.showInputDialog("Enter second integer");
+         JOptionPane.showInputDialog("Digite o segundo número!");
       /**
        * int: como vai ser a variavel, no caso int = numero inteiro 
        * number1: espaço onde oque for digitado no firstNumber sera guardado, igual uma prateleira
@@ -54,8 +54,8 @@ public class Addition
        * "(Aspas)": texto que quer ser mostrado
        * + sum: quando colocado fora das "Aspas", ira aparecer como texto o resultado da sum 
        */
-      JOptionPane.showMessageDialog(null, "The sum is " + sum, 
-         "Sum of Two Integers", JOptionPane.PLAIN_MESSAGE);
+      JOptionPane.showMessageDialog(null, "A soma deles é: " + sum, 
+         "Soma de dois números", JOptionPane.PLAIN_MESSAGE);
          /**
           * title: define qual o titulo do programa
           * PLAIN_MESSAGE: tipo de caixa onde irá ter os espaços para digitar, textos, botões e etc
