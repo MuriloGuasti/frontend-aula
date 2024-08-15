@@ -32,6 +32,8 @@ public class Addition
          JOptionPane.showInputDialog("Digite o primeiro número!");
       String secondNumber =
          JOptionPane.showInputDialog("Digite o segundo número!");
+      String thirdNumber =
+         JOptionPane.showInputDialog("Digite o terceiro número!");
       /**
        * int: como vai ser a variavel, no caso int = numero inteiro 
        * number1: espaço onde oque for digitado no firstNumber sera guardado, igual uma prateleira
@@ -41,11 +43,12 @@ public class Addition
        */ 
       int number1 = Integer.parseInt(firstNumber); 
       int number2 = Integer.parseInt(secondNumber);
+      int number3 = Integer.parseInt(thirdNumber);
       /**
        * sum: soma dois valores
        * +: fica entre os dois valores onde quer ser somados
        */ 
-      int sum = number1 + number2;
+      int sum = number1 + number2 + number3;
       /**
        * showMassageDialog: uma mensagem da escolha do Dev ira aparecer na tela
        * parentComponent: orienta o componente sequente para qual "caixa" ele ira aparacer
@@ -55,7 +58,7 @@ public class Addition
        * + sum: quando colocado fora das "Aspas", ira aparecer como texto o resultado da sum 
        */
       JOptionPane.showMessageDialog(null, "A soma deles é: " + sum, 
-         "Soma de dois números", JOptionPane.PLAIN_MESSAGE);
+         "Soma de três números", JOptionPane.PLAIN_MESSAGE);
          /**
           * title: define qual o titulo do programa
           * PLAIN_MESSAGE: tipo de caixa onde irá ter os espaços para digitar, textos, botões e etc
