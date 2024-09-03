@@ -1,79 +1,79 @@
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*; // Importação de biblioteca
+import javax.swing.*;
 
-public class MouseTrackerFrame extends JFrame //Craição de classe
+public class MouseTrackerFrame extends JFrame
 {
    private final JPanel mousePanel;
-   private final JLabel statusBar; // Variaveis
+   private final JLabel statusBar;
 
-   public MouseTrackerFrame() //Método
+   public MouseTrackerFrame()
    {
-      super("Demonstrating Mouse Events"); //Titulo
+      super("Demonstrating Mouse Events");
 
       mousePanel = new JPanel(); 
-      mousePanel.setBackground(Color.WHITE); //Cor do Background
-      add(mousePanel, BorderLayout.CENTER); //Add Mouse panel
+      mousePanel.setBackground(Color.WHITE); 
+      add(mousePanel, BorderLayout.CENTER);
 
-      statusBar = new JLabel("Mouse outside JPanel"); //Novo Método
-      add(statusBar, BorderLayout.SOUTH); //Add Barra de Status
+      statusBar = new JLabel("Mouse outside JPanel"); 
+      add(statusBar, BorderLayout.SOUTH);
 
-      MouseHandler handler = new MouseHandler();  //Adiciona uma ação
+      MouseHandler handler = new MouseHandler(); 
       mousePanel.addMouseListener(handler); 
       mousePanel.addMouseMotionListener(handler); 
-   } 
+   }
 
    private class MouseHandler implements MouseListener, 
-      MouseMotionListener  //Implementação de biblioteca
+      MouseMotionListener 
    {
       @Override
       public void mouseClicked(MouseEvent event)
       {
-         statusBar.setText(String.format("Clicked at [%d, %d]", 
-            event.getX(), event.getY())); //Ao ser clicado mostra XY
+         statusBar.setText(String.format("Clicked at [left: %d, top: %d, right: %d, bottom: %d]", 
+            event.getX(), event.getY(), mousePanel.getWidth() - event.getX(), mousePanel.getHeight() - event.getY()));
       } 
 
       @Override
       public void mousePressed(MouseEvent event)
       {
-         statusBar.setText(String.format("Pressed at [%d, %d]", 
-            event.getX(), event.getY()));//Foi pressionado, mostra XY
+         statusBar.setText(String.format("Pressed at [left: %d, top: %d, right: %d, bottom: %d]", 
+            event.getX(), event.getY(), mousePanel.getWidth() - event.getX(), mousePanel.getHeight() - event.getY()));
       }
 
       @Override
       public void mouseReleased(MouseEvent event)
       {
-         statusBar.setText(String.format("Released at [%d, %d]", 
-            event.getX(), event.getY())); //Foi soltado, mostra XY
+         statusBar.setText(String.format("Released at [left: %d, top: %d, right: %d, bottom: %d]", 
+            event.getX(), event.getY(), mousePanel.getWidth() - event.getX(), mousePanel.getHeight() - event.getY()));
       }
 
       @Override
       public void mouseEntered(MouseEvent event)
       {
-         statusBar.setText(String.format("Mouse entered at [%d, %d]", 
-            event.getX(), event.getY()));
-         mousePanel.setBackground(Color.GREEN); //Entrou no Panel, mostra XY e fica Verde o fundo
+         statusBar.setText(String.format("Mouse entered at [left: %d, top: %d, right: %d, bottom: %d]", 
+            event.getX(), event.getY(), mousePanel.getWidth() - event.getX(), mousePanel.getHeight() - event.getY()));
+         mousePanel.setBackground(Color.GREEN);
       }
 
       @Override
       public void mouseExited(MouseEvent event)
       {
          statusBar.setText("Mouse outside JPanel");
-         mousePanel.setBackground(Color.WHITE); // Mouse saiu, fica branco e n mostra XY
+         mousePanel.setBackground(Color.WHITE);
       }
 
       @Override
       public void mouseDragged(MouseEvent event)
       {
-         statusBar.setText(String.format("Dragged at [%d, %d]", 
-            event.getX(), event.getY())); //Pressionado arrastado mostra XY
+         statusBar.setText(String.format("Dragged at [left: %d, top: %d, right: %d, bottom: %d]", 
+            event.getX(), event.getY(), mousePanel.getWidth() - event.getX(), mousePanel.getHeight() - event.getY()));
       } 
 
       @Override
       public void mouseMoved(MouseEvent event)
       {
-         statusBar.setText(String.format("Moved at [%d, %d]", 
-            event.getX(), event.getY())); //Mouse mecheu, mostra XY
+         statusBar.setText(String.format("Moved at [left: %d, top: %d, right: %d, bottom: %d]", 
+            event.getX(), event.getY(), mousePanel.getWidth() - event.getX(), mousePanel.getHeight() - event.getY()));
       } 
    }
 }

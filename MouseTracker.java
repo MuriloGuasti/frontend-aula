@@ -1,6 +1,6 @@
-import javax.swing.JFrame;
+import javax.swing.*;
 
-public class MouseTracker 
+public class MouseTracker
 {
    public static void main(String[] args)
    { 
